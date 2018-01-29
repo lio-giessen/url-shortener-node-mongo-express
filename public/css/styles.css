@@ -5,7 +5,8 @@
 html,
 body {
   height: 100%;
-  background-color: #4791D2;
+  /*background-color: #4791D2;*/
+  background: url('img/background.jpg');
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 
 .btn-shorten {
   color: #ffffff;
-  background-color: #F89406;
+  background-color: #e07b2a;
   border: none;
 }
 
