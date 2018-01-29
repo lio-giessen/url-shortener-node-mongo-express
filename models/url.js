@@ -15,9 +15,13 @@ var urlSchema = new Schema({
   created_at: Date
 });
 
+var getRandomInt = function(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+};
+
 urlSchema.pre('save', function(next){
   var doc = this;
-  counter.findByIdAndUpdate({_id: 'url_count'}, {$inc: {seq: 10000} }, function(error, counter) {
+  counter.findByIdAndUpdate({_id: 'url_count'}, {$inc: {seq: getRandomInt(9999, 999999)} }, function(error, counter) {
       if (error)
           return next(error);
       doc.created_at = new Date();
